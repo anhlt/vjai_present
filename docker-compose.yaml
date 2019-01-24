@@ -1,0 +1,16 @@
+version: '2'
+services:
+    python:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        container_name : faster_rcnn 
+        ports:
+            - "8889:8889"
+        volumes:
+            - ".:/data"
+        shm_size: '10gb'
+        working_dir: /data
+        user: anh
+        tty: true
+        command: jupyter notebook --ip=0.0.0.0 --port=8889 --NotebookApp.password='sha1:4018b457b8a9:84c65a176a549c58609c3cf38fa50b4b1b12b808'
