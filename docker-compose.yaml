@@ -4,7 +4,6 @@ services:
         build:
             context: .
             dockerfile: ./Dockerfile
-        container_name : faster_rcnn 
         ports:
             - "8889:8889"
         volumes:
